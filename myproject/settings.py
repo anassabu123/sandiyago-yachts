@@ -103,7 +103,7 @@ import mimetypes
 mimetypes.add_type("text/css", ".css", True)
 
 # Default primary key field type
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'import os
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS = ['*']
 
