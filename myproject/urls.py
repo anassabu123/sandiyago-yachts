@@ -18,3 +18,11 @@ urlpatterns = [
     path('bookingRequest/',views.bookingRequest,name='bookingRequest')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+from django.contrib import admin
+from django.urls import path
+from web import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+]
