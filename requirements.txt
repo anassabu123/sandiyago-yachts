@@ -1,4 +1,5 @@
 setuptools
+distutils
 asgiref
 boto3
 CacheControl==0.12.6
