@@ -1,0 +1,445 @@
+@use 'variables' ;
+
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+// html
+// {
+//     overflow-x: hidden;
+// }
+
+.containermain
+{
+    max-width: 1920px;
+    width: 100%;
+    margin: auto;
+}
+
+// .daterangepicker
+// {
+//     position: fixed !important;
+// }
+
+// .daterangepicker
+// {
+//     position: fixed !important;
+// }
+
+
+#section-modal
+{
+    /* The Modal (background) */
+.modal {
+    // display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    // padding-top: 100px; /* Location of the box */
+    // align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: -30%;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%; /* Full width */
+    // max-width: 1920px;
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    transition: .4s;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Modal Content */
+  .modal-content {
+    border-radius: 14.7869px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 72rem;
+    max-height: 80vh;
+    overflow: auto;
+    
+
+    
+    .left
+    {
+        width: 100%;
+        .main
+        {
+            width: 90%;
+            margin: auto;
+            padding: 0rem 0rem 3rem;
+            font-weight: 700;
+            .heading
+            {
+                font-size: variables.$sec4-heading;
+                color: variables.$heading-color;
+                .sec4-span
+                {
+                    color: variables.$heading-color;
+                }
+            }
+        }
+        form
+        {
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+        .formgrp
+        {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            width: 100%;
+            justify-content: center;
+            row-gap: 1rem;
+            .sec6data1
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: .5rem;
+            }
+            .sec6data2
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: .5rem;
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            label
+            {
+                font-weight: 600;
+                // color: variables.$sec6-label-color;
+            }
+            input
+            {
+                height: 3.3125rem;
+                background: rgba(71,98,255,.08);
+                border: 1.01673px solid variables.$heading-color;
+                border-radius: 44px;
+                padding-left: 1rem;
+                outline: none;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type=number]{
+                -moz-appearance: textfield;
+            }
+            .formsubmit
+            {
+                padding: 0;
+                // border: 1.01673px solid variables.$heading-color;
+                background: variables.$btn;
+                color: variables.$white;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+        
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width:567px) and (max-width:992px) {
+    // .daterangepicker
+    // {
+    //     position: fixed !important;
+    // }
+  
+    #section-modal
+{
+    /* The Modal (background) */
+    .modal 
+    {
+    // display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    // padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: -30%;
+    pointer-events: none;
+    opacity: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+  
+  /* Modal Content */
+  .modal-content {
+    border-radius: 14.7869px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    .left
+    {
+        width: 100%;
+        .main
+        {
+            width: 85%;
+            margin: auto;
+            padding: 0rem 0rem 3rem;
+            font-weight: 700;
+            .heading
+            {
+                font-size: variables.$sec4-heading-tab;
+                color: variables.$heading-color;
+                .sec4-span
+                {
+                    color: variables.$heading-color;
+                }
+            }
+        }
+        form
+        {
+            width: 85%;
+            margin: auto;
+            display: flex;
+        }
+        .formgrp
+        {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 2rem;
+            width: 100%;
+            justify-content: center;
+            row-gap: 1rem;
+            .sec6data1
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: .5rem;
+            }
+            .sec6data2
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: .5rem;
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            label
+            {
+                font-weight: 600;
+                // color: variables.$sec6-label-color;
+            }
+            input,select
+            {
+                height: 3.3125rem;
+                background: rgba(71,98,255,.08);
+                border: 1.01673px solid variables.$heading-color;
+                border-radius: 44px;
+                padding-left: 1rem;
+                outline: none;
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            .formsubmit
+            {
+                padding: 0;
+                // border: 1.01673px solid variables.$heading-color;
+                background: variables.$btn;
+                color: variables.$white;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+        
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    .daterangepicker
+    {
+        top:65px  !important;
+        position: fixed !important;
+    }
+    #section-modal
+    {
+        /* The Modal (background) */
+    .modal 
+    {
+        // display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        // padding-top: 50px; /* Location of the box */
+        padding-top: 5rem;
+
+        left: 0;
+        top: -30%;
+        pointer-events: none;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+        border-radius: 14.7869px;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%;
+        .left
+        {
+            width: 100%;
+            .main
+            {
+                width: 90%;
+                margin: auto;
+                padding: 0rem 0rem 3rem;
+                font-weight: 700;
+                .heading
+                {
+                    font-size: variables.$sec4-heading-mob;
+                    color: variables.$heading-color;
+                    .sec4-span
+                    {
+                        color: variables.$heading-color;
+                    }
+                }
+            }
+            form
+            {
+                width: 90%;
+                margin: auto;
+                display: flex;
+            }
+            .formgrp
+            {
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                gap: 2rem;
+                width: 100%;
+                justify-content: center;
+                row-gap: 1rem;
+                .sec6data1
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: .5rem;
+                }
+                .sec6data2
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: .5rem;
+                    grid-column-start: 1;
+                    grid-column-end: 1;
+                }
+                label
+                {
+                    font-weight: 600;
+                    // color: variables.$sec6-label-color;
+                }
+                input,select
+                {
+                    height: 2.5rem;
+                    background: rgba(71,98,255,.08);
+                    border: 1.01673px solid variables.$heading-color;
+                    border-radius: 44px;
+                    padding-left: 1rem;
+                    outline: none;
+                }
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                .formsubmit
+                {
+                    padding: 0;
+                    // border: 1.01673px solid variables.$heading-color;
+                    background: variables.$btn;
+                    color: variables.$white;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
+    
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    }
+}

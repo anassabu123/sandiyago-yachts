@@ -1,0 +1,766 @@
+@use 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+html
+{
+    overflow-x: hidden;
+}
+
+.main-container
+{
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+img
+{
+    width: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.scaleimg
+{
+    transform: scale(1.2) !important;
+}
+
+#booknow
+{
+    width: 100%;
+    padding-top: 5.8125rem;
+    .booknow-container
+    {
+        width: 100%;
+        padding: 5rem 5rem 0rem 5rem;
+        display: flex;
+        column-gap: 4rem;
+        .b-left
+        {
+            width: 11%;
+            min-width: 9rem;
+            position: relative;
+            z-index: 0;
+            .swiper {
+                width: 100px;
+                height: 400px;
+                padding: .5rem;
+
+                img
+                {
+                    cursor: pointer;
+                }
+              }
+              .vbtn1
+              {
+                  position: absolute;
+                  top: -2rem;
+                  left: 4rem;
+                  transform: rotate(90deg);
+              }
+              .vbtn2
+              {
+                  position: absolute;
+                  top: 26rem;
+                  left: 4rem;
+                  transform: rotate(90deg);
+              }
+              .swiper-button-prev:after 
+              {
+                font-size: 1rem;
+                font-weight: 900;
+                color: variables.$heading-color;
+
+              }
+              .swiper-button-next:after
+              {
+                font-size: 1rem;
+                font-weight: 900;
+                color: variables.$heading-color;
+              }
+        }
+        .b-right
+        {
+            width: 50%;
+            .top
+            {
+                .heading
+                {
+                    font-size: variables.$sec4-heading;
+                    color: variables.$heading-color;
+                    font-weight: 700;
+                    padding-bottom: 2rem;
+                }
+                .para
+                {
+                    font-size: variables.$sec4-para-font;
+                    color: variables.$sec4-para-color;
+                    font-weight: 400;
+                }
+                .b-right2-inner
+                {
+                    display: none;
+                }
+                .b-right-inner
+                {
+                    display: none;
+                }
+            }
+        }
+
+        .b-right2
+        {
+            width: 30%;
+            padding: 3rem 0rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            .right-slide
+            {
+                cursor: pointer;
+            }
+            .b-right2-desc
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                input{
+                    height: 2.5rem;
+                    width: 10rem;
+                    background: variables.$btn;
+                    color: variables.$white;
+                    font-weight: 600;
+                    border: none;
+                    border-radius: 8.49148px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width:567px) and (max-width:992px) {
+    #booknow
+    {
+        width: 100%;
+        padding-top: 5.8125rem;
+        .booknow-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            padding: 2.5rem 0rem 0rem;
+            display: flex;
+            column-gap: 4rem;
+            .b-left
+            {
+                width: 11%;
+                min-width: 9rem;
+                position: relative;
+                display: none;
+                .swiper {
+                    width: 400px;
+                    height: 100px;
+                }
+                
+                .vbtn1
+                {
+                    position: absolute;
+                    top: -2rem;
+                    left: 3rem;
+                    transform: rotate(90deg);
+                }
+                .vbtn2
+                {
+                    position: absolute;
+                    top: 26rem;
+                    left: 3rem;
+                    transform: rotate(90deg);
+                }
+            }
+            .b-right
+            {
+                width: 100%;
+
+                .top
+                {
+                    .b-right2-inner
+                    {
+                        width: 50%;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 2rem;
+                        margin: auto;
+                        padding-bottom: 2rem;
+                        .b-right2-desc
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            input{
+                                height: 2.5rem;
+                                width: 8rem;
+                                background: variables.$btn;
+                                color: variables.$white;
+                                font-weight: 600;
+                                border: none;
+                                border-radius: 8.49148px;
+                            }
+                        }
+                    }
+                    .b-right-inner
+                    {
+                        display: block;
+                        position: relative;
+                        z-index: 0;
+
+                        .swiper {
+                            width: 40%;
+                            height: auto;
+                            .swiper-wrapper
+                            {
+                                column-gap: .5rem;
+                            }
+                        }
+                        .vbtn1
+                        {
+                            position: absolute;
+                            top: 45%;
+                            left: 20%;
+                        }
+                        .vbtn2
+                        {
+                            position: absolute;
+                            top: 45%;
+                            right: 20%;
+                        }
+                        .swiper-button-prev:after 
+                        {
+                          font-size: 1rem;
+                          font-weight: 900;
+                          color: variables.$heading-color;
+          
+                        }
+                        .swiper-button-next:after
+                        {
+                          font-size: 1rem;
+                          font-weight: 900;
+                          color: variables.$heading-color;
+                        }
+                    }
+                    .heading
+                    {
+                        font-size: variables.$sec2-heading-font-tab;
+                        font-weight: 700;
+                        padding-bottom: 2rem;
+                    }
+                    .para
+                    {
+                        padding-top: 2rem;
+                        font-size: variables.$sec4-para-font-tab;
+                        color: variables.$sec4-para-color;
+                    }
+                }
+            }
+
+            .b-right2
+            {
+                width: 25%;
+                display: none;
+                .b-right2-desc
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    input{
+                        height: 3rem;
+                        width: 10rem;
+                        background: variables.$btn;
+                        color: variables.$white;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 8.49148px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    #booknow
+    {
+        width: 100%;
+        .booknow-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            padding: 1rem 0rem 0rem;
+            display: flex;
+            column-gap: 4rem;
+            .b-left
+            {
+                width: 11%;
+                min-width: 9rem;
+                position: relative;
+                display: none;
+                .swiper {
+                    width: 400px;
+                    height: 100px;
+
+                }
+                .vbtn1
+                {
+                    position: absolute;
+                    top: -2rem;
+                    left: 3rem;
+                    transform: rotate(90deg);
+                }
+                .vbtn2
+                {
+                    position: absolute;
+                    top: 26rem;
+                    left: 3rem;
+                    transform: rotate(90deg);
+                }
+            }
+            .b-right
+            {
+                width: 100%;
+
+                .top
+                {
+                    .b-right2-inner
+                    {
+                        width: 75%;
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+                        margin: auto;
+                        padding-bottom: 1rem;
+                        .b-right2-desc
+                        {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            input{
+                                height: 2rem;
+                                width: 6rem;
+                                background: variables.$btn;
+                                color: variables.$white;
+                                font-weight: 600;
+                                border: none;
+                                border-radius: 8.49148px;
+                            }
+                        }
+                    }
+                    .b-right-inner
+                    {
+                        display: block;
+                        position: relative;
+                        z-index: 0;
+
+                        .swiper {
+                            width: 75%;
+                            height: auto;
+                            .swiper-wrapper
+                            {
+                                column-gap: .5rem;
+                            }
+                        }
+                        .vbtn1
+                        {
+                            position: absolute;
+                            top: 45%;
+                            left: 2%;
+                        }
+                        .vbtn2
+                        {
+                            position: absolute;
+                            top: 45%;
+                            right: 2%;
+                        }
+                        .swiper-button-prev:after 
+                        {
+                          font-size: variables.$sec4-para-font-mob;
+                          font-weight: 900;
+                          color: variables.$heading-color;
+          
+                        }
+                        .swiper-button-next:after
+                        {
+                          font-size: 1rem;
+                          font-weight: 900;
+                          font-size: variables.$sec4-para-font-mob;
+                          color: variables.$heading-color;
+                        }
+                    }
+                    .heading
+                    {
+                        font-size: variables.$sec2-heading-font-mob;
+                        font-weight: 700;
+                        padding-bottom: 2rem;
+                        text-align: center;
+                    }
+                    .para
+                    {
+                        padding-top: 1rem;
+                        font-size: variables.$sec4-para-font-mob;
+                        color: variables.$sec4-para-color;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .b-right2
+            {
+                width: 25%;
+                display: none;
+                .b-right2-desc
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    input{
+                        height: 3rem;
+                        width: 10rem;
+                        background: variables.$btn;
+                        color: variables.$white;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 8.49148px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+#section2
+{
+    width: 100%;
+    .sec2-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        padding: 5rem 0rem;
+        .main
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            row-gap: 2rem;
+            padding-bottom: 2rem;
+            .main-heading
+            {
+                color: variables.$heading-color;
+                font-size: variables.$sec2-heading-font;
+                font-weight: 700;
+                font-style: normal;
+            }
+            .main-para
+            {
+                font-size: variables.$sec2-para-font;
+                font-weight: 400;
+                color: variables.$sec2-para-color;
+                font-style: normal;
+            }
+
+        }
+        .sec2-bottom
+        {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 3rem;
+            .grd1
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                img
+                {
+                    cursor: pointer;
+                }
+                .grd1-desc
+                {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .grd1-left
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+                    }
+                    .grd-heading
+                    {
+                        color: variables.$heading-color;
+                        font-size: variables.$sec2-heading2-font;
+                    }
+                    .grd-para
+                    {
+                        font-size: variables.$sec2-para2-font;
+                        color: variables.$sec2-para-color;
+                        font-weight: 400;
+                        font-style: normal;
+                    }
+                    input
+                    {
+                        height: 2.5rem;
+                        width: 10.375rem;
+                        background: variables.$btn;
+                        border-radius: 8.49px;
+                        border: none;
+                        color: variables.$white;
+                        font-style: normal;
+                        font-size: variables.$sec2-para-font;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .sec2-bottom2
+        {
+            display: flex;
+            justify-content: center;
+            padding: 3rem 0rem;
+            .load-more
+            {
+                color: variables.$btn;
+                font-style: normal;
+                font-size: variables.$sec2-para-font;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    #section2
+    {
+        width: 100%;
+        .sec2-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            padding: 1rem 0rem;
+            .main
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                row-gap: 1rem;
+                padding-bottom: 1rem;
+                .main-heading
+                {
+                    color: variables.$heading-color;
+                    font-size: variables.$sec2-heading-font-mob;
+                    font-weight: 700;
+                    font-style: normal;
+                }
+                .main-para
+                {
+                    font-size: variables.$sec2-para-font-mob;
+                    font-weight: 400;
+                    color: variables.$sec2-para-color;
+                    font-style: normal;
+                }
+
+            }
+            .sec2-bottom
+            {
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+                gap: 2rem;
+                .grd1
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    .grd1-desc
+                    {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .grd1-left
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 1rem;
+                        }
+                        .grd-heading
+                        {
+                            color: variables.$heading-color;
+                            font-size: variables.$sec2-heading2-font-mob;
+                        }
+                        .grd-para
+                        {
+                            font-size: variables.$sec2-para2-font-mob;
+                            color: variables.$sec2-para-color;
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+                        input
+                        {
+                            height: 2rem;
+                            width: 6rem;
+                            background: variables.$btn;
+                            border-radius: 8.49px;
+                            border: none;
+                            color: variables.$white;
+                            font-style: normal;
+                            font-size: variables.$sec2-para-font-mob;
+                            font-weight: 600;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .sec2-bottom2
+            {
+                display: flex;
+                justify-content: center;
+                padding: 3rem 0rem;
+                .load-more
+                {
+                    color: variables.$btn;
+                    font-style: normal;
+                    font-size: variables.$sec2-para-font;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:567px) and (max-width:992px) {
+    #section2
+    {
+        width: 100%;
+        .sec2-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            padding: 2.5rem 0rem;
+            .main
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                row-gap: 2rem;
+                padding-bottom: 2rem;
+                .main-heading
+                {
+                    color: variables.$heading-color;
+                    font-size: variables.$sec2-heading-font-tab;
+                    font-weight: 700;
+                    font-style: normal;
+                }
+                .main-para
+                {
+                    font-size: variables.$sec2-para-font-tab;
+                    font-weight: 400;
+                    color: variables.$sec2-para-color;
+                    font-style: normal;
+                }
+
+            }
+            .sec2-bottom
+            {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 1rem;
+                .grd1
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    .grd1-desc
+                    {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .grd1-left
+                        {
+                            display: flex;
+                            flex-direction: column;
+                            row-gap: 1rem;
+                        }
+                        .grd-heading
+                        {
+                            color: variables.$heading-color;
+                            font-size: variables.$sec2-heading2-font-tab;
+                        }
+                        .grd-para
+                        {
+                            font-size: variables.$sec2-para2-font;
+                            color: variables.$sec2-para-color;
+                            font-weight: 400;
+                            font-style: normal;
+                        }
+                        input
+                        {
+                            height: 2.5rem;
+                            width: 6rem;
+                            background: variables.$btn;
+                            border-radius: 8.49px;
+                            border: none;
+                            color: variables.$white;
+                            font-style: normal;
+                            font-size: variables.$sec2-para-font-tab;
+                            font-weight: 600;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .sec2-bottom2
+            {
+                display: flex;
+                justify-content: center;
+                padding: 3rem 0rem;
+                .load-more
+                {
+                    color: variables.$btn;
+                    font-style: normal;
+                    font-size: variables.$sec2-para-font;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

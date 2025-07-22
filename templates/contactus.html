@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/contactus.min.css">
+</head>
+<body>
+   
+    {% include 'base/header.html' %}
+
+    <section id="contactus" class="main-container">
+        <article class="contactus-container">
+            <aside class="contactus-top">
+                <h1 class="heading" >Our Contact Details</h1>
+            </aside>
+            <aside class="contactus-bottom">
+                <div class="c-left">
+                    <div class="data1">
+                        <div>
+                            <a href="tel:+971526094947" target="_blank">
+                                <img class="contactusimg" src="/static/images/icon/Call contact us.svg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <p class="contactus-para">Call : +971526094947</p>
+                        </div>
+                    </div>
+                    <div class="data1">
+                        <div>
+                            <a href="https://wa.me/+971526094947" target="_blank">
+                                <img class="contactusimg" src="/static/images/icon/Whatsapp2.svg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <p class="contactus-para">Whatsapp : +971526094947</p>
+                        </div>
+                    </div>
+                    <div class="data1">
+                        <div>
+                            <a href="mailto:sandyagoyachts@gmail.com" target="_blank">
+                                <img class="contactusimg" src="/static/images/icon/msg.svg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <p class="contactus-para" >E-mail : sandyagoyachts@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="data1">
+                        <div>
+                            <a target="_blank" href="https://www.google.com/maps/place/Spinneys/@25.0860783,55.145691,17z/data=!4m6!3m5!1s0x3e5f6b50a63fff37:0x13858df0672b31ee!8m2!3d25.0860783!4d55.1482659!16s%2Fg%2F1trrbnx9?entry=ttu">
+                                <img class="contactusimg" src="/static/images/icon/Map2.svg" alt="">
+                            </a>
+                        </div>
+                        <div>
+                            <p class="contactus-para">Dubai Marina, Marina Park  spinneys round port, U gate</p>
+                        </div>
+                    </div>
+                    <div class="data2">
+                        <div>
+                            <h1 class="heading">Our Social Media</h1>
+                        </div>
+                        <div class="data1">
+                            <div>
+                                <a target="_blank" href="https://wa.me/+971526094947">
+                                    <img src="/static/images/icon/Whatsapp2.svg" alt="">
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" href="https://www.facebook.com/profile.php?id=100089786632481&mibextid=LQQJ4d">
+                                    <img src="/static/images/icon/i.icon-facebook-1.svg" alt="">
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" href="https://instagram.com/yachtssandiyago?igshid=OGQ5ZDc2ODk2ZA==">
+                                <img src="/static/images/icon/i.icon-twitter-1.svg" alt="">
+                                </a>
+                            </div>
+                            <!-- <div>
+                                <a target="_blank" href="#">
+                                    <img src="/static/images/icon/i.icon-linkedin3.svg" alt="">
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-right" onsubmit="callRequestContactus(event)">
+                    <input type="hidden" value="{{csrf_token}}" id="hiddenCsrfTokenContactus">
+                    <h1 class="c-heading">Do you have any questions?</h1>
+                    <p class="c-para">Reach out to us today and let us exceed your expectations.<br></p>
+                    <form class="form" action="">
+                        <input type="text" required placeholder="Enter Your Name" id="NameContactus" name="NameContactus">
+                        <input type="number" min="5555555555" max="9999999999" required placeholder="Enter Your Number" id="NumberContactus" name="NumberContactus">
+                        <textarea class="textareaindex" required placeholder="Type a Message" id="MessageContactus" name="MessageContactus"></textarea>
+                        <input type="submit" value="Send" >
+                    </form>
+                </div>
+                
+            </aside>
+        </article>
+    </section>
+
+    <section id="section5" class="main-container">
+        <article class="sec5-container">
+            <aside class="sec5-left">
+                <h1 class="c-heading">Where are we?</h1>
+                <p class="c-para">Please feel free to reach out to us using the following contact details:<br/><br>
+                    Email: sandyagoyachts@gmail.com<br><br>
+                    Phone: +971526094947<br><br>
+                    Address: Dubai Marina, Marina Park  spinneys round port, U gate</p>
+            </aside>
+            <aside class="sec5-right">
+                <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Dubai%20Marina,%20Marina%20Park%20spinneys%20round%20port,%20U%20gate+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
+            </aside>
+        </article>
+    </section>
+
+    {% include 'base/footer.html' %}
+
+    <script src="/static/js/contactuscallrequest.js"></script>
+
+
+</body>
+</html>

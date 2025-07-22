@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 1rem;
+        }
+        .text-danger {
+            color: red;
+        }
+        label {
+            display: block;
+            margin: .2em 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form method="POST" id="addYachtForm" action="/saveYachtInfo/" enctype="multipart/form-data">{% csrf_token %}
+            <div>
+                <label for="Images">Yacht Image <span class="text-danger">*</span></label>
+                <input type="file" name="images" id="images1" />
+            </div>
+            <div>
+                <button type="button" onclick="addNewImage()">Add Another Image</button>
+            </div>
+            <div>
+                <label for="featuredimg">Featured Image <span class="text-danger">*</span></label>
+                <input type="file" name="featuredimg" id="featuredimg"/>
+            </div>
+            <div>
+                <label for="name">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="size">Size <span class="text-danger">*</span></label>
+                <input type="number" name="size" id="size" />
+            </div>
+            <div>
+                <label for="price">Price <span class="text-danger">*</span></label>
+                <input type="number" name="price" id="price" />
+            </div>
+            <div>
+                <label for="capacity">Capacity <span class="text-danger">*</span></label>
+                <input type="number" name="capacity" id="capacity"/>
+            </div>
+            <div>
+                <label for="boattype">Boat Type <span class="text-danger">*</span></label>
+                <input type="text" name="boattype" id="boattype"/>
+            </div>
+            <div>
+                <label for="roominfo">Room Info <span class="text-danger">*</span></label>
+                <input type="text" name="roominfo" id="roominfo"/>
+            </div>
+            <div>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+<script>
+    const addYachtForm = document.getElementById('addYachtForm');
+    let counter = 1;
+    function addNewImage() {
+        let newImageInput = document.createElement('div');
+        newImageInput.innerHTML = `
+            <label for="Images">Ycht Image <span class="text-danger">*</span></label>
+            <input type="file" name="images" id="images${++counter}" required/>
+            <button type="button" onclick="removeImage(event)" style="background-color: red; color: white;">Remove</button>`;
+        addYachtForm.prepend(newImageInput);
+    }
+    function removeImage(e) {
+        e.currentTarget.parentElement.remove();
+    }
+</script>
+
+</html>

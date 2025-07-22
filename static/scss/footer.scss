@@ -1,0 +1,297 @@
+@use 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+html
+{
+    overflow-x: hidden;
+}
+
+.main-container
+{
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+img
+{
+    width: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+#footer
+{
+    width: 100%;
+    background: variables.$footer-bg;
+
+    .footer-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        // display: flex;
+        // justify-content: space-between;
+        padding: 5rem 0rem;
+        color: variables.$white;
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        .f-heading
+        {
+            font-size: variables.$footer-heading;
+            font-weight: 500;
+        }
+        .f-link
+        {
+            font-size: variables.$footer-link;
+        }
+        .f-sec1
+        {
+            .f-logo
+            {
+                width: 50%;
+            }
+        }
+        .f-sec2
+        {
+            // width: 25%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .f-sec3
+        {
+            // width: 25%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .f-map
+            {
+                display: flex;
+                column-gap: .5rem;
+                img{
+                    width: auto;
+                }
+            }
+        }
+        .f-sec4
+        {
+            // width: 25%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .social-1
+            {
+                display: flex;
+                column-gap: .5rem;
+            }
+        }
+        
+    }
+    .copyright
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        .copy-para
+        {
+            padding: 1rem 0rem;
+            color: variables.$white;
+            font-size: variables.$footer-link;
+        }
+    }
+}
+
+@media only screen and (min-width:567px) and (max-width:992px) {
+    #footer
+{
+    width: 100%;
+    background: variables.$footer-bg;
+
+    .footer-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        // display: flex;
+        // flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        justify-content: space-between;
+        place-items: center;
+        padding: 5rem 0rem;
+        color: variables.$white;
+        row-gap: 2rem;
+        .f-heading
+        {
+            font-size: variables.$footer-heading-tab;
+            font-weight: 500;
+        }
+        .f-link
+        {
+            font-size: variables.$footer-link-tab;
+        }
+        .f-sec1
+        {
+            .f-logo
+            {
+                width: 100%;
+            }
+        }
+        .f-sec2
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .f-sec3
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .f-map
+            {
+                display: flex;
+                column-gap: .5rem;
+                img{
+                    width: auto;
+                }
+            }
+        }
+        .f-sec4
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .social-1
+            {
+                display: flex;
+                column-gap: .5rem;
+                img
+                {
+                    width: auto;
+                }
+            }
+        }
+        
+    }
+    .copyright
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        .copy-para
+        {
+            padding: 1rem 0rem;
+            color: variables.$white;
+            font-size: variables.$footer-link-tab;
+        }
+    }
+}
+
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    #footer
+{
+    width: 100%;
+    background: variables.$footer-bg;
+
+    .footer-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        // display: flex;
+        // flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-content: space-between;
+        // place-items: center;
+        padding: 5rem 0rem;
+        color: variables.$white;
+        row-gap: 2rem;
+        .f-heading
+        {
+            font-size: variables.$footer-heading-mob;
+            font-weight: 500;
+        }
+        .f-link
+        {
+            font-size: variables.$footer-link-mob;
+        }
+        .f-sec1
+        {
+            .f-logo
+            {
+                width: 50%;
+            }
+        }
+        .f-sec2
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .f-sec3
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .f-map
+            {
+                display: flex;
+                column-gap: .5rem;
+                img{
+                    width: auto;
+                }
+            }
+        }
+        .f-sec4
+        {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .social-1
+            {
+                display: flex;
+                column-gap: .5rem;
+                img
+                {
+                    width: auto;
+                }
+            }
+        }
+        
+    }
+    .copyright
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        .copy-para
+        {
+            padding: 1rem 0rem;
+            color: variables.$white;
+            font-size: variables.$footer-link-mob;
+        }
+    }
+}
+
+}

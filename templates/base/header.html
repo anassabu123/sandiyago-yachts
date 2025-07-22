@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/header.min.css">
+</head>
+<body>
+
+    {% include 'modal2.html' %}
+    {% include 'alert.html' %}
+
+
+    <header id="header" class="main-container">
+        <article class="header-container main-container" >
+            <!-- <aside class="headertop">
+                <div class="htleft">
+                    <div class="map">
+                        <img class="icon" src="/static/images/icon/Vector (2).svg" alt="">
+                        <div>
+                            <p class="map-para">Our Address:</p>
+                            <p class="map-para">Lorem ipsum dolor sit</p>
+                        </div>
+                    </div>
+                    <div class="timing">
+                        <img class="icon" src="/static/images/icon/Vector (1).svg" alt="">
+                        <div>
+                            <p class="map-para">Our Timings:</p>
+                            <p class="map-para">From 8:00 to 22:00 seven days a week</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="htright">
+                    <div class="call">
+                        <img class="icon" src="/static/images/icon/Vector.svg" alt="">
+                        <div>
+                            <p>+971568787909</p>
+                            <p>+971568787909</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <hr> -->
+            <aside class="headerbottom" >
+                <div>
+                    <a href="{% url 'home' %}">
+                        <img src="/static/images/logo/Copy of YatchLogo (1) 1.svg" alt="">
+                    </a>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home' %}#ourfleet">Our Fleet</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home' %}#ourservices">Our Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'aboutus' %}">About us</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contactus' %}">Contact us</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <a>
+                            <input type="button" id="requestcall" value="Request a call">
+                        </a>
+                    </div>
+                    <div class="hamburger-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="hmsize" height="1em" viewBox="0 0 448 512">
+                            <path class="hamburger-icon" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+
+                            <path  class="close-icon" d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+                        </svg>
+                        
+                    </div>
+                </nav>
+
+                
+            </aside>
+        </article>
+    </header>
+
+    <script src="/static/js/header.js" ></script>
+    <script src="/static/js/modal2.js"></script>
+
+</body>
+</html>

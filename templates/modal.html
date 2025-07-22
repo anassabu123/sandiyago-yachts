@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/modal.min.css">
+
+   
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+<body>
+    <section id="section-modal" >
+        <!-- Trigger/Open The Modal -->
+        <!-- <button id="myBtn">Open Modal</button> -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="left">
+                <aside class='main'>
+                    <h1 class="heading">Book <span class="sec4-span">Now</span></h1>
+                </aside>
+                <form onsubmit="bookRequest(event)">
+                    <input type="hidden" value="{{csrf_token}}" id="hiddenCsrfToken2">
+                    <input type="hidden" value="" id="yachtBookId" />
+                    <input type="hidden" value="" id="eventPrice" />
+                    <div class="formgrp">
+                        <input type="hidden" id="modalType">
+                        <div class="sec6data1">
+                            <label for="bookUserName">Name</label>
+                            <input type="text" required  placeholder="Enter Your Full Name" name="bookUserName" id="bookUserName"/>
+                        </div>
+                        <div class="sec6data1">
+                            <label for="daterange">Date Range</label>
+                            <input type="text" name="daterange" readonly value="01/01/2023 - 01/15/2025" id="daterange"/>
+                        </div>  
+                        <div class="sec6data1" >
+                            <label for="bookUserEmail">E-mail</label>
+                            <input type="email" name="bookUserEmail" required placeholder="Enter Your Email"  id="bookUserEmail" />
+                        </div>
+                        <div class="sec6data1">
+                            <label for="bookUserPhone">Whatsapp No.</label>
+                            <input type="number" name="bookUserPhone" min="5555555555" max="9999999999" required placeholder="Enter Your number" id="bookUserPhone"/>
+                        </div>
+                        
+                        <div class="sec6data1">
+                            <label for="noOfPeople">Number of People</label>
+                            <input type="number" placeholder="Number of People" name="noOfPeople" id="noOfPeople" />
+                        </div>  
+                        <div class="sec6data1">
+                            <label for="destination">Destination</label>
+                            <input type="text" placeholder="Destination" name="destination" id="destination"/>
+                        </div>  
+                        <div class="sec6data2">
+                            <input class="formsubmit" id="modalsubmitbtn" type="submit" value="Submit"/>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    
+<script src="../static/js/model.js"></script>
+<script src="../static/js/requestbooking.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function() {
+      $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+      }, function(start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      });
+    });
+</script>
+
+</body>
+</html>

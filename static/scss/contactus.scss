@@ -1,0 +1,547 @@
+@use 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+html
+{
+    overflow-x: hidden;
+}
+
+.main-container
+{
+    width: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+img
+{
+    width: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+#contactus
+{
+    width: 100%;
+    // padding-top: 9.3125rem;
+    padding-top: 4.8125rem;
+
+    
+    .contactus-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        padding: 5rem 0rem;
+        .contactus-top
+        {
+            width: 100%;
+            // padding-bottom: 2.5rem;
+            .heading
+            {
+                font-size: variables.$sec4-heading;
+                color: variables.$heading-color;
+            }
+        }
+        .contactus-bottom
+        {
+            display: flex;
+            column-gap: 8rem;
+            .c-left
+            {
+                width: 50%;
+                padding: 2.5rem 0rem;
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                .data1
+                {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+                    .contactusimg
+                    {
+                        width: fit-content;
+                    }
+                    .contactus-para
+                    {
+                        font-size: variables.$sec4-para-font;
+                        color: variables.$heading-color;
+                    }
+                }
+                .data2
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    .heading
+                    {
+                        font-size: variables.$sec4-heading-tab;
+                        font-weight: 700;
+                        color: variables.$contactus-heading-blue;
+                    }
+                }
+
+            }
+            .form-right
+            {
+                width: 50%;
+                background: variables.$white;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                padding: 2rem 3rem;
+                border-radius: 15px;
+                box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.09);
+                .c-heading
+                {
+                    color: variables.$heading-color;
+                    font-size: variables.$sec7-heading-tab;
+                }
+                .c-para
+                {
+                    font-size: variables.$sec4-para-font;
+                    color: variables.$sec4-para-color;
+                }
+                .form
+                {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    input
+                    {
+                        height: 3.5rem;
+                        padding-left: 1rem;
+                        background: variables.$sec7-input-bg;
+                        font-size: variables.$sec7-font-para;
+                        font-weight: 400;
+                        border-radius: 8px;
+                        border: none;
+                        outline: none;
+                    }
+                    input[type="submit"]
+                    {
+                        border: none;
+                        outline: none;
+                        background: variables.$btn;
+                        color: variables.$white;
+                        font-weight: 600;
+                        font-size: variables.$sec7-font-para;
+                        margin-top: 1rem;
+                        padding: 0px;
+                        border-radius: 8px;
+                        cursor: pointer;
+                    }
+                    input[type=number]::-webkit-inner-spin-button,
+                    input[type=number]::-webkit-outer-spin-button { 
+                        -webkit-appearance: none; 
+                        margin: 0; 
+                    }
+                    input[type=number]{
+                        -moz-appearance: textfield;
+                    }
+                    .textareaindex
+                    {
+                        padding: 1rem;
+                        background: variables.$sec7-input-bg;
+                        font-size: variables.$sec7-font-para;
+                        font-weight: 400;
+                        border-radius: 8px;
+                        border: none;
+                        outline: none;
+                        resize: none;
+                    }
+                }
+    
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    #contactus
+    {
+        width: 100%;
+        padding-top: 4.8125rem;
+
+        .contactus-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            // padding: 5rem 0rem;
+            .contactus-top
+            {
+                width: 100%;
+                // padding-bottom: 2.5rem;
+                .heading
+                {
+                    font-size: variables.$sec4-heading-mob;
+                    color: variables.$heading-color;
+                    text-align: center;
+                }
+            }
+            .contactus-bottom
+            {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                .c-left
+                {
+                    width: 100%;
+                    padding: 1rem 0rem;
+                 
+                    .data1
+                    {
+                        display: flex;
+                        align-items: center;
+                        column-gap: .5rem;
+
+                        .contactus-para
+                        {
+                            font-size: variables.$sec4-para-font-mob;
+                            color: variables.$heading-color;
+                        }
+
+                    }
+                    .data2
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+                        .heading
+                        {
+                            font-size: variables.$contactus-heading-blue-font;
+                            font-weight: 700;
+                            color: variables.$contactus-heading-blue;
+                        }
+                    }
+                }
+                .form-right
+                {
+                    width: 100%;
+                    background: variables.$white;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    padding: 1rem;
+                    border-radius: 15px;
+                    .c-heading
+                    {
+                        color: variables.$heading-color;
+                        font-size: variables.$sec7-heading-mob;
+                    }
+                    .c-para
+                    {
+                        // font-size: variables.$sec4-para-font;
+                        font-size: variables.$sec7-font-para-mob;
+                        color: variables.$sec4-para-color;
+                    }
+                    .form
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+                        input
+                        {
+                            height: 2.5rem;
+                            padding-left: 1rem;
+                            background: variables.$sec7-input-bg;
+                            font-size: variables.$sec7-font-para-mob;
+                            font-weight: 400;
+                            border-radius: 8px;
+                            border: none;
+                            outline: none;
+                        }
+                        input[type="submit"]
+                        {
+                            border: none;
+                            outline: none;
+                            background: variables.$btn;
+                            color: variables.$white;
+                            font-weight: 600;
+                            font-size: variables.$sec7-font-para-mob;
+                            margin-top: 1rem;
+                            padding: 0px;
+                            border-radius: 8px;
+                        }
+                        input[type=number]::-webkit-inner-spin-button,
+                        input[type=number]::-webkit-outer-spin-button { 
+                            -webkit-appearance: none; 
+                            margin: 0; 
+                        }
+                        .textareaindex
+                        {
+                            font-size: variables.$sec7-font-para-mob;
+                        }
+                    }
+        
+                }
+
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:567px) and (max-width:992px) {
+    #contactus
+    {
+        width: 100%;
+        padding-top: 4.8125rem;
+
+        .contactus-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            // padding: 5rem 0rem;
+            .contactus-top
+            {
+                width: 100%;
+                // padding-bottom: 2.5rem;
+                .heading
+                {
+                    font-size: variables.$sec4-heading-tab;
+                    color: variables.$heading-color;
+                }
+            }
+            .contactus-bottom
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                column-gap: 1rem;
+                .c-left
+                {
+                    width: 100%;
+                    padding: 1.5rem 0rem;
+
+                    .data1
+                    {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                        .contactus-para
+                        {
+                            font-size: variables.$sec4-para-font-tab;
+                            color: variables.$heading-color;
+                        }
+                    }
+                    .data2
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        .heading
+                        {
+                            font-size: variables.$contactus-heading-blue-font-tab;
+                            font-weight: 700;
+                            color: variables.$contactus-heading-blue;
+                        }
+                    }
+                }
+                .form-right
+                {
+                    width: 70%;
+                    background: variables.$white;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    padding: 2rem 3rem;
+                    border-radius: 15px;
+                    .c-heading
+                    {
+                        color: variables.$heading-color;
+                        // font-size: variables.$sec7-heading-tab;
+                        font-size: 2rem;
+                    }
+                    .c-para
+                    {
+                        font-size: variables.$sec4-para-font-tab;
+                        color: variables.$sec4-para-color;
+                    }
+                    .form
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+                        input
+                        {
+                            height: 3rem;
+                            padding-left: 1rem;
+                            background: variables.$sec7-input-bg;
+                            font-size: variables.$sec7-font-para-tab;
+                            font-weight: 400;
+                            border-radius: 8px;
+                            border: none;
+                            outline: none;
+                        }
+                        input[type="submit"]
+                        {
+                            border: none;
+                            outline: none;
+                            background: variables.$btn;
+                            color: variables.$white;
+                            font-weight: 600;
+                            font-size: variables.$sec7-font-para-tab;
+                            margin-top: 1rem;
+                            padding: 0px;
+                            border-radius: 8px;
+                        }
+                        input[type=number]::-webkit-inner-spin-button,
+                        input[type=number]::-webkit-outer-spin-button { 
+                            -webkit-appearance: none; 
+                            margin: 0; 
+                        }
+                        .textareaindex
+                        {
+                            font-size: variables.$sec7-font-para-tab;
+                        }
+                    }
+        
+                }
+            }
+        }
+    }
+}
+
+#section5
+{
+    width: 100%;
+    background: variables.$sec4-bg;
+    .sec5-container
+    {
+        width: 100%;
+        max-width: 80%;
+        margin: auto;
+        display: flex;
+        column-gap: 3rem;
+        padding: 5rem 0rem;
+        .sec5-left
+        {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            padding: 5rem 0rem;
+            .c-heading
+            {
+                color: variables.$heading-color;
+                font-size: variables.$sec4-heading;
+            }
+            .c-para
+            {
+                font-size: variables.$sec4-para-font;
+                color: variables.$sec4-para-color;
+            }
+
+        }
+        .sec5-right
+        {
+            width: 50%;
+            padding: 2rem 0rem;
+        }
+    }
+
+}
+
+@media only screen and (min-width:200px) and (max-width:567px) {
+    #section5
+    {
+        width: 100%;
+        background: variables.$sec4-bg;
+        .sec5-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            column-gap: 3rem;
+            padding: 1rem 0rem;
+            .sec5-left
+            {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                padding: 1rem 0rem;
+                .c-heading
+                {
+                    color: variables.$heading-color;
+                    font-size: variables.$sec4-heading-mob;
+                    text-align: center;
+                }
+                .c-para
+                {
+                    font-size: variables.$sec4-para-font-mob;
+                    color: variables.$sec4-para-color;
+                    text-align: center;
+                }
+
+            }
+            .sec5-right
+            {
+                width: 100%;
+                padding: 2rem 0rem;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width:567px) and (max-width:992px) {
+    #section5
+    {
+        width: 100%;
+        background: variables.$sec4-bg;
+        .sec5-container
+        {
+            width: 100%;
+            max-width: 80%;
+            margin: auto;
+            display: flex;
+            column-gap: 3rem;
+            padding: 2.5rem 0rem;
+            .sec5-left
+            {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                padding: 5rem 0rem;
+                .c-heading
+                {
+                    color: variables.$heading-color;
+                    font-size: variables.$sec4-heading-tab;
+                }
+                .c-para
+                {
+                    font-size: variables.$sec4-para-font-tab;
+                    color: variables.$sec4-para-color;
+                }
+
+            }
+            .sec5-right
+            {
+                width: 50%;
+                padding: 2rem 0rem;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/modal2.min.css">
+</head>
+<body>
+    <section id="section-modal2">
+        <!-- Trigger/Open The Modal -->
+        <!-- <button id="myBtn">Open Modal</button> -->
+
+        <!-- The Modal -->
+        <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <div class="left">
+                <aside class='main'>
+                    <h1 class="heading">Request a <span class="sec4-span">call</span></h1>
+                </aside>
+                <form  action="" onsubmit="callRequest(event)">
+                    <input type="hidden" value="{{csrf_token}}" id="hiddenCsrfToken">
+
+                    <div class="formgrp">
+                        <div class="sec6data1">
+                            <label for="enquiryName">Name</label>
+                            <input type="text" name="enquiryName" id="enquiryName" required  placeholder="Enter Your Full Name" />
+                        </div>
+                        <div class="sec6data1">
+                            <label for="enquiryPhone">Contact No.</label>
+                            <input type="number" min="5555555555" max="9999999999" required placeholder="Enter Your number" name="enquiryPhone" id="enquiryPhone" />
+                        </div>
+                        <div class="sec6data1">
+                            <label for="enquiryMsg">Reason</label>
+                            <textarea placeholder="Type a Message" id="enquiryMsg" name="enquiryMsg"></textarea>
+                        </div>  
+                        <div class="sec6data1">
+                            <input class="formsubmit" id="mymodal2close" type="submit" value="Submit"/>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        </div>
+    </section>
+<script src="../static/js/modal2.js"></script>
+<script src="../static/js/requestcall.js"></script>
+
+</body>
+</html>

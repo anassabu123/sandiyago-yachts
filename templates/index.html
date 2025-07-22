@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/index.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    {% include 'base/header.html' %} {% include 'modal.html' %} {% include 'alert.html' %}
+    <section id="section1" class="main-container">
+        <article class="sec1-container">
+            <aside class="sec7-top">
+                <img class="sec7-img" src="/static/images/picture/Desktop - 6.png" alt="">
+                <div class="form-outer">
+                    <div class="form-left">
+                    </div>
+                    <div class="form-right" data-aos="fade-up">
+                        <h1 class="c-heading">Best Yacht Rental<br> Service</h1>
+                        <p class="c-para">Experience the epitome of elegance and indulge in the ultimate yachting experience with Sandiyago Yachts, where luxury meets the open seas.<br></p>
+                        <div class="form" action="">
+                            <a href="{% url 'contactus' %}">
+                                <input type="submit" value="Contact us">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </article>
+    </section>
+
+    <section id="section2" class="main-container" data-aos="fade-up" data-aos-duration="1000">
+        <article class="sec2-container" id="ourfleet">
+            <aside class="main">
+                <h1 class="main-heading">Our Fleet</h1>
+                <p class="main-para">You deserve better than a usual yacht for the vacation you want just look at our fleet and choose the best which suit you.</p>
+            </aside>
+            <aside class="sec2-bottom">
+                {% for yacht in yachtData %}
+                <div class="grd1">
+                    <div>
+                        <a href="/booknow/{{yacht.docId}}/">
+                            <img src="/media/{{yacht.featuredImage}}" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a href="/booknow/{{yacht.docId}}/">
+                                <h1 class="grd-heading">{{yacht.name}}</h1>
+                            </a>
+                            <a href="/booknow/{{yacht.docId}}/">
+                                <p class="grd-para" >AED {{yacht.price}} | {{yacht.capacity}} People</p>
+                            </a>
+
+                        </div>
+                        <div>
+                            <a>
+                                <p style="display: none;" class="yachtName-{{yacht.docId}}">{{yacht.name}}</p>
+                                <p style="display: none;" class="yachtPrice-{{yacht.docId}}">{{yacht.price}}</p>
+                                <input type="button" onclick="modal1open(event, '{{yacht.docId}}')" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- this data for booking request js -->
+                {% endfor %}
+                <!-- <div class="grd1">
+                    <div>
+                        <a href="/booknow/">
+                            <img src="/static/images/picture/Frame 9.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a href="/booknow/">
+                                <h1 class="grd-heading">Benetti 125 Charade</h1>
+
+                            </a>
+                            <a href="/booknow/">
+                                <p class="grd-para" >2018 | €16,950,000</p>
+
+                            </a>
+
+                        </div>
+                        <div>
+                            <a>
+                                <input type="button" onclick="modal1open(event, '')" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a href="/booknow/">
+                            <img src="/static/images/picture/Frame 10.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a href="/booknow/">
+                                <h1 class="grd-heading">Benetti 125 Charade</h1>
+
+                            </a>
+                            <a href="/booknow/">
+                                <p class="grd-para" >2018 | €16,950,000</p>
+
+                            </a>
+
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, '')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a href="/booknow/">
+                            <img src="/static/images/picture/Frame 11.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a href="/booknow/">
+                                <h1 class="grd-heading">Benetti 125 Charade</h1>
+
+                            </a>
+                            <a href="/booknow/">
+                                <p class="grd-para" >2018 | €16,950,000</p>
+
+                            </a>
+
+                        </div>
+                        <div>
+                            <a>
+                                <input type="button" onclick="modal1open(event, '')" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+            </aside>
+            <!-- <aside class="sec2-bottom2">
+                <a class="load-more" href="#">Load More</a>
+            </aside> -->
+        </article>
+    </section>
+
+    <section id="section3" class="main-container" data-aos="fade-up">
+        <article class="sec3-container" id="ourservices">
+            <aside class="main">
+                <h1 class="main-heading">Our Services</h1>
+                <p class="main-para">At Sandiyago Yachts, we offer a comprehensive range of services to ensure an exceptional and memorable yachting experience.</p>
+            </aside>
+            <aside class="sec3-bottom">
+                <!-- <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Events & Parties')">
+                            <img class="ourservicesimg" src="/static/images/picture/Frame 17.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Events & Parties</h1>
+
+                            </a>
+                            <p class="grd-para" >2018 | €16,950,000</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Events & Parties')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Jet Ski')">
+                            <img class="ourservicesimg" src="/static/images/picture/Frame 21.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Jet ski</h1>
+                            </a>
+                            <p class="grd-para" >2018 | €16,950,000</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Jet Ski')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Fly Board')">
+                            <img class="ourservicesimg" src="/static/images/picture/Frame 19.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Fly Board</h1>
+                            </a>
+                            <p class="grd-para" >2018 | €16,950,000</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Fly Board')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Water Car')">
+                            <img class="ourservicesimg" src="/static/images/picture/Frame 23.png" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Water Car</h1>
+                            </a>
+                            <p class="grd-para" >2018 | €16,950,000</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Water Car')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Deep sea fishing')">
+                            <img class="ourservicesimg" src="/static/images/picture/WhatsApp Image 2023-07-05 at 16.55.17.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Deep sea fishing</h1>
+                            </a>
+                            <p class="grd-para" >2018 | €16,950,000</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Deep sea fishing')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Wakeboarding')">
+                            <img class="ourservicesimg" src="/static/images/picture/WhatsApp Image 2023-07-05 at 16.50.41.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Wakeboarding</h1>
+                            </a>
+                            <p class="grd-para" >900 AED | 1 Hour</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Wakeboarding')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Parasailing')">
+                            <img class="ourservicesimg" src="/static/images/picture/WhatsApp Image 2023-07-05 at 16.45.00.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Parasailing</h1>
+                            </a>
+                            <p class="grd-para" >900 AED | 1 Hour</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Parasailing')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, 'Banana ride')">
+                            <img class="ourservicesimg" src="/static/images/picture/WhatsApp Image 2023-07-05 at 16.29.57.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">Banana ride</h1>
+                            </a>
+                            <p class="grd-para" >AED 550 | 1 Hour</p>
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, 'Banana ride')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+
+                {% for event in eventData %}
+                <!-- <h1>{{event}}</h1>
+                <h1>{{event.featuredEventimg}}</h1> -->
+                <div class="grd1">
+                    <div>
+                        <a onclick="modal1open(event, '{{event.eventName}}','{{event.price}}')">
+                            <img class="ourservicesimg" src="/media/{{event.featuredEventimg}}" alt="">
+                        </a>
+                    </div>
+                    <div class="grd1-desc">
+                        <div class="grd1-left">
+                            <a>
+                                <h1 class="grd-heading">{{event.eventName}}</h1>
+                            </a>
+                            {% if event.price == '' %}
+                            <p class="grd-para">Contact for info</p>
+                            {% else %}
+                            <p class="grd-para" >AED {{event.price}} | {{event.hours}} Hour</p>
+                            {% endif %}
+
+                        </div>
+                        <div>
+                            <a>
+                                <input onclick="modal1open(event, '{{event.eventName}}','{{event.price}}')" type="button" value="Book Now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </aside>
+            <!-- <aside class="sec3-bottom2">
+                <a class="load-more" href="#">Load More</a>
+            </aside> -->
+        </article>
+    </section>
+
+    <section id="section4" class="main-container" data-aos="fade-up" data-aos-duration="1000">
+        <article class="sec4-container">
+            <aside class="sec4-left">
+                <h1 class="c-heading">Brands who we are partner with</h1>
+                <p class="c-para">At Sandiyago Yachts, we proudly partner with renowned brands that share our commitment to excellence and luxury. Collaborating with prestigious names in the industry such as Banetti, Amer Yachts, and Arcon Yachts, we ensure that our clients
+                    experience the finest quality, craftsmanship, and innovation during their yacht journeys. Together with our esteemed partners, we aim to deliver unparalleled luxury and create unforgettable moments on the water.</p>
+            </aside>
+            <aside class="sec4-right">
+                <div class="sec4-logo1">
+                    <div>
+                        <a href="#">
+                            <img src="/static/images/logo/Baneti_Logo_Web21-300x133 1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/static/images/logo/alpha+logo+png 1.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <a href="#">
+                            <img src="/static/images/logo/image 1.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="sec4-logo1">
+                    <div>
+                        <a href="#">
+                            <img src="/static/images/logo/logo 1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/static/images/logo/image 2.png" alt="">
+                        </a>
+                    </div>
+
+                </div>
+            </aside>
+        </article>
+    </section>
+
+    <!--Review section-->
+<div class="main-container" data-aos="fade-up">
+    <div class="wrapper " >
+        <h1 class="main-heading2">Customer Reviews</h1>
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel">
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/IMG-20230707-WA0007.jpg" alt="img" draggable="false"></div>
+                <p>Our experience with Sandiyago Yachts was beyond exceptional. The yacht was absolutely stunning, and the crew went above and beyond to ensure our comfort and enjoyment. The personalized service and attention to detail were truly remarkable.
+                    We can't wait to sail with them again.</p>
+                <span>Sarah M.</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/WhatsApp Image 2023-07-07 at 16.05.37.jpg" alt="img" draggable="false"></div>
+                <p>From start to finish, Sandiyago Yachts provided an unforgettable yachting experience. The professionalism and friendliness of the crew made us feel at home from the moment we stepped aboard. The yacht itself was luxurious and well-appointed,
+                    and the itinerary took us to breathtaking locations.</p>
+                <span>James P</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/IMG-20230707-WA0006.jpg" alt="img" draggable="false"></div>
+                <p>Sandiyago Yachts exceeded all our expectations. The yacht was immaculate, the crew was knowledgeable and attentive, and the entire experience was seamless. The personalized itinerary allowed us to explore stunning destinations and enjoy
+                    various water sports.</p>
+                <span>Emily D</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/IMG-20230707-WA0005.jpg" alt="img" draggable="false"></div>
+                <p>I can't say enough positive things about Sandiyago Yachts. The team was incredibly responsive and helpful throughout the entire booking process. The yacht was stunning, and the crew provided top-notch service. We felt like royalty on board.
+                    Highly Recommended.</p>
+                <span> Michael S</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/IMG-20230707-WA0004.jpg" alt="img" draggable="false"></div>
+                <p>Sandiyago Yachts delivered an exceptional yachting experience. The crew was attentive, professional, and made us feel like VIPs. The yacht itself was luxurious, with every detail meticulously taken care of. We enjoyed exploring beautiful
+                    destinations and indulging in gourmet dining on board.</p>
+                <span>Jessica L</span>
+            </li>
+            <li class="card">
+                <div class="img"><img src="/static/images/picture/IMG-20230707-WA0003.jpg" alt="img" draggable="false"></div>
+                <p>Sandiyago Yachts delivered an exceptional yachting experience. The crew was attentive, professional, and made us feel like VIPs. The yacht itself was luxurious, with every detail meticulously taken care of. We enjoyed exploring beautiful
+                    destinations and indulging in gourmet dining on board.</p>
+                <span> Matias</span>
+            </li>
+        </ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+</div>
+    
+
+</body>
+
+</html>
+<!--Review section end-->
+
+<section id="section5" class="main-container" data-aos="fade-up">
+    <article class="sec5-container">
+        <aside class="sec5-left">
+            <h1 class="c-heading">Where are we?</h1>
+            <p class="c-para">Please feel free to reach out to us using the following contact details:<br/><br> Email: sandyagoyachts@gmail.com<br><br> Phone: +971526094947<br><br> Address: Dubai Marina, Marina Park spinneys round port, U gate</p>
+        </aside>
+        <aside class="sec5-right">
+            <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Dubai%20Marina,%20Marina%20Park%20spinneys%20round%20port,%20U%20gate+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">area maps</a></iframe></div>
+        </aside>
+    </article>
+</section>
+
+<section id="section6" class="main-container" data-aos="fade-up">
+    <article class="sec6-container">
+        <aside class="main">
+            <h1 class="main-heading">Gallery</h1>
+        </aside>
+        <aside class="sec3-bottom">
+            <aside class="slider-main">
+                <div class="slide-container">
+                    <div class="slide">
+                        <img src="/static/images/picture/boat-4119276_1280.jpg" alt="">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/static/images/picture/Frame 10.png" alt="">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/static/images/picture/Frame 19.png" alt="">
+                    </div>
+
+                    <div class="slide">
+                        <img src="/static/images/picture/Frame 21.png" alt="">
+                    </div>
+
+                    <span class="arrow prev" onclick="controller(-1)">&#10094;</span>
+                    <span class="arrow next" onclick="controller(1)">&#10095;</span>
+
+                </div>
+
+            </aside>
+
+        </aside>
+
+    </article>
+</section>
+
+<section id="section7" class="main-container" data-aos="fade-up" data-aos-duration="2000">
+    <article class="sec7-container">
+        <aside class="sec7-top">
+            <img class="sec7-img" src="/static/images/picture/Frame 95.png" alt="">
+            <div class="form-outer">
+                <div class="form-left">
+                </div>
+                <div class="form-right">
+                    <h1 class="c-heading">Do you have any <br>questions?</h1>
+                    <p class="c-para">Reach out to us today and let us exceed your expectations.<br></p>
+                    <form class="form" action="" onsubmit="callRequestIndex(event)">
+                        <input type="hidden" value="{{csrf_token}}" id="hiddenCsrfTokenIndex">
+
+                        <input type="text" required placeholder="Enter Your Name" name="NameIndexPage" id="NameIndexPage">
+                        <input type="number" min="5555555555" required placeholder="Enter Your Number" name="NumberIndexPage" id="NumberIndexPage">
+                        <textarea class="textareaindex" required placeholder="Type a Message" name="MessageIndexPage" id="MessageIndexPage"></textarea>
+                        <input type="submit" value="Send">
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </article>
+</section>
+
+
+
+
+<script src="/static/js/index.js"></script>
+<script src="/static/js/indexcallrequest.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        offset: 300,
+        delay: 0,
+        duration: 1500,
+        easing: 'ease-in-out',
+    });
+</script>
+<script src="/static/js/modal.js"></script>
+
+<script src="/static/js/review.js"></script>
+
+{% include 'base/footer.html' %}
+</body>
+
+</html>

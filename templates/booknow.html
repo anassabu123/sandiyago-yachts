@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandiyago Yacht</title>
+    <link rel="stylesheet" href="/static/css/booknow.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"  /> -->
+  </head>
+  <body>
+
+    {% include 'base/header.html' %}
+    {% include 'modal.html' %}
+    {% include 'alert.html' %}
+
+
+    <section id="booknow" class="main-container">
+      <article class="booknow-container">
+        <aside class="b-left">
+          <!-- Slider main container -->
+          <div class="swiper-button-prev vbtn1"></div>
+          <div class="swiper-button-next vbtn2"></div>
+
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/media/{{yachtInfo.featuredImage}}" alt="" />
+              </div>
+              {% for img in yachtInfo.showcaseImages  %}
+                <div class="swiper-slide" onclick="shift(event)">
+                  <img class="imgB" src="/media/{{img}}" alt="" />
+                </div>
+              {% endfor %}
+              
+              <!-- <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_2.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_3.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img src="/static/images/picture/yacht-8_4.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_5.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_6.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_8.png" alt="" />
+              </div>
+              <div class="swiper-slide" onclick="shift(event)">
+                <img class="imgB" src="/static/images/picture/yacht-8_11.png" alt="" />
+              </div> -->
+            </div>
+            <!-- If we need pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+
+            <!-- If we need navigation buttons -->
+
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+        </aside>
+        <aside class="b-right">
+          <div class="top">
+            <h1 class="heading">{{yachtInfo.name}} {{yachtInfo.size}} Feet</h1>
+
+            <div class=""></div>
+            <div class="b-right2-inner">
+                <div class="right-slide2">
+                    <img src="/media/{{yachtInfo.featuredImage}}" alt="">
+                </div>
+                <div class="b-right2-desc">
+                    <h1 class="price">AED {{yachtInfo.price}}</h1>
+                    <!-- <input type="button" onclick="modal1open()" value="Book Now"> -->
+                    <p style="display: none;" class="yachtName-{{yacht.docId}}">{{yachtInfo.name}}</p>
+                    <p style="display: none;" class="yachtPrice-{{yacht.docId}}">{{yachtInfo.price}}</p>
+                    <input type="button" onclick="modal1open(event, '{{yachtInfo.docId}}')" value="Book Now" />
+                    
+                </div>
+                <!-- <div class="owl-carousel owl-theme">
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 18.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 19.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 20.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 21.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/yacht-8_2 1.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 18.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 19.png" alt="">
+                    </div>
+                    <div class="item right-slide">
+                        <img src="/static/images/picture/Rectangle 20.png" alt="">
+                    </div>
+                    
+                </div> -->
+    
+            </div>
+
+            <aside class="b-right-inner">
+              <!-- Slider main container -->
+              <div class="swiper-button-prev vbtn1"></div>
+              <div class="swiper-button-next vbtn2"></div>
+
+              <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/media/{{yachtInfo.featuredImage}}" alt="" />
+                  </div>
+                  {% for img in yachtInfo.showcaseImages  %}
+                    <div class="swiper-slide" onclick="shift2(event)">
+                      <img class="imgB" src="/media/{{img}}" alt="" />
+                    </div>
+                  {% endfor %}
+
+                  <!-- <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_12.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_2.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_3.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_4.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_5.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_6.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_8.png" alt="" />
+                  </div>
+                  <div class="swiper-slide" onclick="shift2(event)">
+                    <img class="imgB" src="/static/images/picture/yacht-8_11.png" alt="" />
+                  </div> -->
+                </div>
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+
+                <!-- If we need navigation buttons -->
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+              </div>
+            </aside>
+            <p class="para">
+              <!-- It is like the black beauty of the sea. 
+              having 4 bedrooms and 1
+              master bedroom, it will be a wonderful experience for you. the fly
+              bridge is so nice and big and also have a big sunbed on the front
+              of the yacht and also have big hall with ac room you can enjoy the
+              trip and can have a birthday party . people keep booking for this
+              yacht as it have all the best features for a party and also for
+              family gatherings . you can dock you ship at ‘jumeira beach’ , JBR
+              beach will be near our dock . thias yacht have a parking on Dubai
+              harbour. 3 crew members and captain will be provided with the
+              yacht .Ice water and cooldrinks and music system will be provided
+              for you . additional charges will be applied for food. The yacht
+              is of {{yachtInfo.capacity}} people capacity. -->
+              Yacht name is : {{yachtInfo.name}}<br>
+              Yacht size is : {{yachtInfo.size}} Feet<br>
+              Yacht booking price is : AED {{yachtInfo.price}}<br>
+              Yacht capacity is : {{yachtInfo.capacity}} people<br>
+          </div>
+        </aside>
+        <div class="b-right2">
+          <div class="right-slide">
+            <img src="/media/{{yachtInfo.featuredImage}}" alt="" />
+          </div>
+          <div class="b-right2-desc">
+            <h1 class="price">AED {{yachtInfo.price}}</h1>
+            <p style="display: none;" class="yachtName-{{yacht.docId}}">{{yachtInfo.name}}</p>
+            <p style="display: none;" class="yachtPrice-{{yacht.docId}}">{{yachtInfo.price}}</p>
+            <input type="button" onclick="modal1open(event, '{{yachtInfo.docId}}')" value="Book Now" />
+          </div>
+          <!-- <div class="owl-carousel owl-theme">
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 18.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 19.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 20.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 21.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/yacht-8_2 1.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 18.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 19.png" alt="">
+                </div>
+                <div class="item right-slide">
+                    <img src="/static/images/picture/Rectangle 20.png" alt="">
+                </div>
+                
+            </div> -->
+        </div>
+      </article>
+    </section>
+
+    <section
+      id="section2"
+      class="main-container"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <article class="sec2-container">
+        <aside class="main">
+          <h1 class="main-heading">Similar Products</h1>
+          <!-- <p class="main-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio in et, lectus sit lorem id integer.</p> -->
+        </aside>
+        <aside class="sec2-bottom">
+
+          {% for yacht in yachtData %}
+
+          <div class="grd1">
+            <div>
+              <a href="/booknow/{{yacht.docId}}/">
+                <img src="/media/{{yacht.featuredImage}}" alt="" />
+              </a>
+            </div>
+            <div class="grd1-desc">
+              <div class="grd1-left">
+                <a href="/booknow/{{yacht.docId}}/">
+                  <h1 class="grd-heading">{{yacht.name}}</h1>
+                </a>
+                <a href="/booknow/{{yacht.docId}}/">
+                  <p class="grd-para">AED {{yacht.price}} | {{yacht.capacity}} People</p>
+                </a>
+              </div>
+              <div>
+                <a>
+                  <p style="display: none;" class="yachtName-{{yacht.docId}}">{{yacht.name}}</p>
+                  <p style="display: none;" class="yachtPrice-{{yacht.docId}}">{{yacht.price}}</p>
+                  <input type="button" onclick="modal1open(event, '{{yacht.docId}}')" value="Book Now" />
+                </a>
+                <a>
+              </a>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+          
+          <!-- <div class="grd1">
+            <div>
+              <a href="#">
+                <img src="/static/images/picture/Frame 9.png" alt="" />
+              </a>
+            </div>
+            <div class="grd1-desc">
+              <div class="grd1-left">
+                <h1 class="grd-heading">Benetti 125 Charade</h1>
+                <p class="grd-para">2018 | €16,950,000</p>
+              </div>
+              <div>
+                <a>
+                  <input type="button" onclick="modal1open()" value="Book Now" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grd1">
+            <div>
+              <a href="#">
+                <img src="/static/images/picture/Frame 10.png" alt="" />
+              </a>
+            </div>
+            <div class="grd1-desc">
+              <div class="grd1-left">
+                <h1 class="grd-heading">Benetti 125 Charade</h1>
+                <p class="grd-para">2018 | €16,950,000</p>
+              </div>
+              <div>
+                <a>
+                  <input type="button" onclick="modal1open()" value="Book Now" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="grd1">
+            <div>
+              <a href="#">
+                <img src="/static/images/picture/Frame 11.png" alt="" />
+              </a>
+            </div>
+            <div class="grd1-desc">
+              <div class="grd1-left">
+                <h1 class="grd-heading">Benetti 125 Charade</h1>
+                <p class="grd-para">2018 | €16,950,000</p>
+              </div>
+              <div>
+                <a>
+                  <input type="button" onclick="modal1open()" value="Book Now" />
+                </a>
+              </div>
+            </div>
+          </div> -->
+        </aside>
+        <aside class="sec2-bottom2">
+          <!-- <a class="load-more" href="#">Load More</a> -->
+        </aside>
+      </article>
+    </section>
+
+
+    {% include 'base/footer.html' %}
+
+
+    <script src="/static/js/modal.js"></script>
+    <script src="/static/js/alert.js"></script>
+    <script src="/static/js/requestbooking.js"></script>
+
+    <script src="/static/js/booknow.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
+    <!-- <script>
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items:1,
+            // autoplay:true,
+            // autoplayTimeout:1000,
+            // autoplayHoverPause:true,
+            
+            dots:false,
+            
+            // responsive:{
+            //     0:{
+            //         items:1
+            //     },
+            //     600:{
+            //         items:3
+            //     },
+            //     1000:{
+            //         items:5
+            //     }
+            // }
+        })
+    </script> -->
+
+
+
+
+  </body>
+</html>
